@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Herramientas",
+    "actions": [
+      { "name": "Streamlabs", "image": "Apps/Streamlabs", "action": "" },
+      { "name": "Visual Studio Code", "image": "Apps/VSCode", "action": "" }
+    ]
+  },
+  {
+    "name": "Juegos",
+    "actions": [
+      {
+        "name": "World of Warcraft",
+        "image": "Games/WorldofWarcraft",
+        "action": ""
+      }
+    ]
+  }
+]

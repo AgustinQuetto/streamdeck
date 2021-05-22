@@ -1,0 +1,12 @@
+{
+  "name": "launcher",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "start": "concurrently 'npm start --prefix ./app' 'npm start --prefix ./server'"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0"
+  }
+}

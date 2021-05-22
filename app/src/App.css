@@ -1,0 +1,25 @@
+section {
+  padding: 20px;
+}
+
+section > h3 {
+  color: white;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 1rem;
+}
+
+.action {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  /* border: 2px dashed #444d56; */
+  cursor: pointer;
+}
+
+.action:hover {
+  filter: brightness(1.2);
+}
