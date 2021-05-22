@@ -2,7 +2,8 @@ section {
   padding: 20px;
 }
 
-section > h3 {
+section > h3,
+h4 {
   color: white;
 }
 
