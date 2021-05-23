@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
@@ -12,7 +13,7 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "nodemon": "^2.0.7",
-    "socket.io": "^4.1.2",
-    "streamlabs-obs-socket-client": "^1.0.2"
+    "slobs-client": "^1.0.3",
+    "socket.io": "^4.1.2"
   }
 }

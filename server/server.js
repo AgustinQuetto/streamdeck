@@ -1,8 +1,13 @@
-const httpServer = require("http").createServer();
-const categories = require("./actions");
-const { get } = require("lodash");
+import HttpServer from "http";
+import categories from "./actions.js";
+import { Server } from "socket.io";
 
-const io = require("socket.io")(httpServer, {
+import pkg from "lodash";
+const { get } = pkg;
+
+const httpServer = HttpServer.createServer();
+
+const io = new Server(httpServer, {
   cors: {
     origin: "*",
     credentials: true,
@@ -17,7 +22,7 @@ io.on("connection", (socket) => {
 
   socket.on("execute-action", (path) => {
     const action = get(categories, path);
-    action.action();
+    action.action(socket);
   });
 });
 

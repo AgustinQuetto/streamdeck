@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState, useEffect } from "react"
 import { io } from "socket.io-client";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const socket = io("http://192.168.1.49:80");
 
@@ -20,6 +22,9 @@ function App() {
   useEffect(() => {
     socket.on("set-categories", (categories) => { console.log("lol"); setCategories(categories) })
     socket.emit("get-categories")
+    socket.on("success", (message)=>
+      toast.info(message)
+    )
   }, [])
 
   const setBackground = (imgPath: string): object => {
@@ -34,13 +39,13 @@ function App() {
   }
 
   return (
-    <>
+    <><ToastContainer />
       {categories.map(({ name, actions }: ICategoryConfiguration, i: number) => (
         <section key={name}>
           <h3>{name}</h3>
           <div className="wrapper">
             {actions.length ? actions.map((action, j: number) => (
-              <div key={action.name} className="action" style={setBackground(action.image)} onClick={() => execute(`${i}.actions.${j}`)}></div>
+              <div className="action-container"><div key={action.name} className="action" style={setBackground(action.image)} onClick={() => execute(`${i}.actions.${j}`)}></div><label>{action.name}</label></div>
             )): <h4>Sin acciones</h4>}
           </div>
         </section>
